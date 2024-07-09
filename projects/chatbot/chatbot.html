@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Wikipedia Chatbot</h2>
+        <p>Paste a Wikipedia link below:</p>
+        <form id="wikiForm">
+            <label for="wikiLink">Wikipedia Link:</label>
+            <input type="text" id="wikiLink" name="wikiLink" placeholder="Paste the link here...">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="chatbotOutput">
+            <!-- Chatbot response will appear here -->
+        </div>
+    </div>
 
+    <!-- Chatbot code goes here -->
+    <script>
+        document.getElementById('wikiForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let wikiLink = document.getElementById('wikiLink').value.trim();
+
+            // Placeholder logic for chatbot response
+            let chatbotResponse = `Chatbot response for: ${wikiLink}`;
+            
+            // Display chatbot response
+            document.getElementById('chatbotOutput').innerHTML = `<p><strong>Chatbot:</strong> ${chatbotResponse}</p>`;
+        });
+    </script>
+</body>
+</html>
