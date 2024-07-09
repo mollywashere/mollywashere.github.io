@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot Project - Molly Owens</title>
     <style>
+        /* Reset and global styles */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -17,6 +18,7 @@
             margin: 0;
             padding: 0;
         }
+        /* Header styles */
         header {
             background-color: #333;
             color: #fff;
@@ -27,6 +29,7 @@
             margin: 0;
             font-size: 2.5rem;
         }
+        /* Navigation styles */
         nav {
             background-color: #f4f4f4;
             padding: 10px 20px;
@@ -36,10 +39,12 @@
             text-decoration: none;
             color: #333;
             padding: 0 10px;
+            transition: background-color 0.3s ease;
         }
         nav a:hover {
             background-color: #ddd;
         }
+        /* Main container */
         .container {
             background-color: #fff;
             margin: 20px auto;
@@ -48,6 +53,7 @@
             max-width: 800px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        /* Project details section */
         .project-details {
             margin-top: 20px;
         }
@@ -59,8 +65,35 @@
         .project-details p {
             margin-bottom: 10px;
         }
+        /* Form and input styles */
+        #wikiForm {
+            margin-bottom: 20px;
+        }
+        #wikiForm label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #wikiLink {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #wikiForm button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #wikiForm button:hover {
+            background-color: #555;
+        }
+        /* Back link styles */
         .back-link {
-            margin-top: 20px;
             text-align: center;
         }
         .back-link a {
@@ -70,6 +103,7 @@
             border: 1px solid #ccc;
             background-color: #f4f4f4;
             transition: background-color 0.3s ease;
+            display: inline-block;
         }
         .back-link a:hover {
             background-color: #ddd;
@@ -88,36 +122,32 @@
     <div class="container">
         <div class="project-details">
             <h2>Chatbot Project</h2>
-            <div class="container">
-                <h2>Wikipedia Chatbot</h2>
+            <form id="wikiForm">
+                <h3>Wikipedia Chatbot</h3>
                 <p>Paste a Wikipedia link below:</p>
-                <form id="wikiForm">
-                    <label for="wikiLink">Wikipedia Link:</label>
-                    <input type="text" id="wikiLink" name="wikiLink" placeholder="Paste the link here...">
-                    <button type="submit">Submit</button>
-                </form>
-                <div id="chatbotOutput">
-                    <!-- Chatbot response will appear here -->
-                </div>
+                <label for="wikiLink">Wikipedia Link:</label>
+                <input type="text" id="wikiLink" name="wikiLink" placeholder="Paste the link here...">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="chatbotOutput">
+                <!-- Chatbot response will appear here -->
             </div>
-        
-            <!-- Chatbot code goes here -->
-            <script>
-                document.getElementById('wikiForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    let wikiLink = document.getElementById('wikiLink').value.trim();
-        
-                    // Placeholder logic for chatbot response
-                    let chatbotResponse = `Chatbot response for: ${wikiLink}`;
-                    
-                    // Display chatbot response
-                    document.getElementById('chatbotOutput').innerHTML = `<p><strong>Chatbot:</strong> ${chatbotResponse}</p>`;
-                });
-            </script>
         </div>
         <div class="back-link">
             <a href="index.html">Back to Portfolio</a>
         </div>
     </div>
+    
+    <!-- JavaScript for handling form submission and displaying chatbot response -->
+    <script>
+        document.getElementById('wikiForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let wikiLink = document.getElementById('wikiLink').value.trim();
+            // Placeholder logic for chatbot response
+            let chatbotResponse = `Chatbot response for: ${wikiLink}`;
+            // Display chatbot response
+            document.getElementById('chatbotOutput').innerHTML = `<p><strong>Chatbot:</strong> ${chatbotResponse}</p>`;
+        });
+    </script>
 </body>
 </html>
