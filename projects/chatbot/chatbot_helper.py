@@ -93,7 +93,7 @@ def setup_text_generation_pipeline(model_name, access_token):
 
 if __name__ == "__main__":
     # Example usage
-    access_token = "Token here"
+    access_token = ACCESS_TOKEN
     model_name = "meta-llama/Llama-2-7b-chat-hf"
     prompt = "Hi! Tell me about yourself!"
     train_texts = ["Example text 1", "Example text 2", "Example text 3"]
