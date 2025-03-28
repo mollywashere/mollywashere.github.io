@@ -121,5 +121,23 @@
         <h2>Resume</h2>
         <embed src="data/resume.pdf" type="application/pdf" width="100%" height="800px" />
     </div>
+
+
+
+    <Script>
+    const express = require("express");
+    const cookieParser = require("cookie-parser");
+    
+    const app = express();
+    app.use(cookieParser());  // Middleware to parse cookies
+    
+    app.get("/", (req, res) => {
+      const sessionCookie = req.cookies.session;  // Get session cookie
+      console.log("Session Cookie:", sessionCookie);
+      res.send(`Session Cookie: ${sessionCookie}`);
+    });
+    
+    app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+    </Script>
 </body>
 </html>
